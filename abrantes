@@ -1,0 +1,22 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int numero = get_int("Você quer a tabuada de qual número?: ");
+    int comeco = get_int("Você quer começar a tabuada em qual número?: ");
+    int fim = get_int("Você quer terminar a tabuada em qual número?: ");
+
+    if (comeco < 0 || comeco > 10 || fim < comeco || fim > 10)
+    {
+        printf("Erro na especificação da tabuada.\n");
+        return 1;
+    }
+
+    for (int i = comeco; i <= fim; i++) 
+    {
+        printf("%d x %d = %d\n", numero, i, numero * i);
+    }
+
+    return 0;
+}
