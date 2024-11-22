@@ -8,7 +8,7 @@ function getColors(){
     return vetorCores.push
 }
 
-
+========
 
 function selecColors(quantidade, vetorCores){
     let vetorSelecionados = []
