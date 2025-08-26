@@ -6,6 +6,15 @@ add EMP_LIMITE numerical(18,8)
 /* 5) Defina os seguintes limites para as empresas:
   
 a) Empresas localizadas no ES  limite de 1.000,00 */
+(update empresa 
+
+set emp_limite = 1000.00
+from cidade, uf
+where FkCidade = IdCidade and Fkuf = Iduf and uf_descricao = "ES"
+select emp_razaosocial, emp_limite, emp_uf from empresa)
+  
+****
+  
 update empresa 
 set emp_limite = 1000.00
 where emp_uf = 'ES'
