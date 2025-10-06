@@ -85,7 +85,7 @@ Insert into região(reg_descricao)
 /*13) Exclua a tabela REGIAO do banco de dados.*/
 	Drop table região;
 
-14) Gere uma consulta para mostra em ordem alfabética, o nome da empresa, e o total de faturas a receber de cada uma (faturas ainda não recebidas) , SOMENTE das empresas localizadas no estado de SP.
+/*14) Gere uma consulta para mostra em ordem alfabética, o nome da empresa, e o total de faturas a receber de cada uma (faturas ainda não recebidas) , SOMENTE das empresas localizadas no estado de SP.*/
 Select emp_razaosocial, 
 	sum(case When rec_dtpago is null then 1 else 0 end) 
 as totalFaturasReceber 
