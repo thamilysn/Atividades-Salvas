@@ -141,5 +141,4 @@ select
 	0.00 as Pagar,
 	rec_valor as Receber
 from receber
-
 where rec_valor > 1000
