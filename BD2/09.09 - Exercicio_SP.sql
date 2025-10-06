@@ -2,8 +2,8 @@
 OBS: Em todas as inclusões/alteração estou considerando que os campos IDcolaborador e IDdependente são auto incremental, por isso não dou insert/update nestes campos */
 
 create proc sp_iu_colabolador
-  (@Idcolaborador  int,
-   @col_nome		varchar(50),
+  (@Idcolaborador int,
+   @col_nome varchar(50),
    @col_dtnascimento datetime)
 as
 
