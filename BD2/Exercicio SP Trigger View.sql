@@ -1,5 +1,34 @@
-/*1-	Desenvolva um trigger que, ao inserir um novo registro na tabela Movbanco, atualize automaticamente o campo Ban_Saldo da tabela banco, somando ou subtraindo o valor dependendo do tipo de movimento (movban_tipo). Explique como tratar situações de saldo negativo.
+/*1-	Desenvolva um trigger que, ao inserir um novo registro na tabela Movbanco, atualize automaticamente o campo Ban_Saldo da tabela banco, somando ou subtraindo o valor dependendo do tipo de movimento (movban_tipo). Explique como tratar situações de saldo negativo. */
+create trigger banco
+on Movbanco
+for insert as declare
+  @valor decimal (10,2)
+  @tipo int
+  @id int 
 
+  select
+    @valor = movban_valor
+    @tipo = movban_tipo
+    @id = fkbanco
+  from inserted
+  
+  if(@tipo = 1)
+  begin
+  update banco
+  set ban_saldo = ban_saldo + @valor
+  where idbanco = id
+  end
+  
+  else
+  begin
+  if(select ban_saldo from banco where idbanco = @id) - @valor >= 0)
+  begin
+  update banco
+  set ban_saldo = ban_saldo - @valor where idbanco = id
+  end
+  end
+  
+  
 2-	Ao criar uma view para exibir todos os recebimentos (receber) de uma empresa, incluindo os dados de banco e cidade, qual problema de desempenho pode ocorrer?
 
 a) Views não permitem junções entre múltiplas tabelas
@@ -8,7 +37,7 @@ c) Views não podem ser atualizadas quando há chave estrangeira
 d) Não é possível usar filtros de data em views
 
 
-3-	Crie uma view que exiba todos os usuários cadastrados (usuarios), mostrando apenas o Usu_nome, ocultando as senhas. Explique por que isso melhora a segurança.
+3-	Crie uma view que exiba todos os usuários cadastrados (usuarios), mostrando apenas o Usu_nome, ocultando as senhas. Explique por que isso melhora a segurança. */
 
 4-	Construa uma view que exiba para cada empresa: razão social, fantasia, ramo de atuação, cidade e UF, e o saldo total a pagar.
 
