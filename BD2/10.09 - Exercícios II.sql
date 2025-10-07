@@ -50,11 +50,8 @@ Depois, escreva uma consulta sobre essa view que retorne apenas os departamentos
 create view vw_salario_depto as
 select departamento, avg(salario) as media_salarial
 from funcionarios
-group by departamento;
-
-select *
-from vw_salario_depto
-where media_salarial > 5000;
+group by departamento
+having media_salarial > 5000;
 
 /*9) Dada a tabela Produtos(id_prod, nome, categoria, preco, estoque) e a tabela Vendas(id_venda, id_prod, quantidade, data_venda), 
 crie uma stored procedure chamada sp_top_vendas_categoria que retorne, para um período informado (@data_ini, @data_fim), os 3 produtos mais vendidos por categoria, considerando a soma das quantidades.*/
