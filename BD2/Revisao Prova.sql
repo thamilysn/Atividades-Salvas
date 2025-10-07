@@ -6,55 +6,53 @@ valor), de qualquer registro ALTERADO na tabela pagar.
 c. Indicar se a operação registrada foi uma exclusão ou alteração
 d. Use SYSTEM_USER e HOST_NAME() para pegar o nome do usuário e o nome da estação */
 
-create trigger trg_Auditoria_Pagar 
-on pagar
-for delete, update 
+create trigger trg_Auditoria_Pagar
+on Pagar
+for delete, update
 as
 begin
   
-  IF EXISTS (SELECT * FROM deleted) AND NOT EXISTS (SELECT * FROM inserted)
-  insert into Auditoria(
-  DataHora,
-  Usuário,
-  Estação,
-  Operação,
-  Pag_Descrição,
-  Pag_Valor)
-  
-  select getdate(), 
-  system_user, 
-  host_name, 
-  'EXCLUSÃO', 
-  Operacao, Pag_Fatura, 
-  Pag_Descricao, 
-  Pag_Valor
-
-  from deleted d;
-end
-  
-  ELSE IF EXISTS (SELECT 1 FROM inserted)
-    begin
-      insert into Auditoria(
-      DataHora, 
-      Usuario, 
-      Estacao, 
-      Operacao, 
-      Pag_Fatura, 
-      Pag_Descricao, 
-      Pag_Valor)
-  
-      select getdate(),
-      SELECT 
-        system_user, 
-        host_name, 
-        'EXCLUSÃO', 
-        Operacao, Pag_Fatura, 
-        Pag_Descricao, 
+    insert into Auditoria (
+        DataHora,
+        Usuario,
+        Estacao,
+        Operacao,
+        Pag_Fatura,
+        Pag_Descricao,
         Pag_Valor
-      from inserted i;
-  end;
-end;
+    )
+    select 
+        GETDATE(),
+        SYSTEM_USER,
+        HOST_NAME(),
+        'EXCLUSAO',
+        d.Pag_Fatura,
+        d.Pag_Descricao,
+        d.Pag_Valor
+    from deleted d
+    where NOT EXISTS (SELECT * FROM inserted);
 
+    -- Alteração
+    INSERT INTO Auditoria (
+        DataHora,
+        Usuario,
+        Estacao,
+        Operacao,
+        Pag_Fatura,
+        Pag_Descricao,
+        Pag_Valor
+    )
+    SELECT 
+        GETDATE(),
+        SYSTEM_USER,
+        HOST_NAME(),
+        'ALTERACAO',
+        i.Pag_Fatura,
+        i.Pag_Descricao,
+        i.Pag_Valor
+    FROM inserted i
+    WHERE EXISTS (SELECT * FROM deleted);
+END;
 
 /*2ª. Questão - (1.0 ponto): Criar uma store procedure que permita inserir ou alterar uma fatura no contas a pagar (tabela Pagar).
 1. Se o id do colaborador for fornecido pelo usuário trata-se de uma ALTERAÇÃO, caso contrário trata-se de uma inserção.
