@@ -23,3 +23,17 @@ end try -- Finaliza o Catch
 	select 'Ops, deu erro! O erro foi ' + ERROR_MESSAGE()
 
 end catch
+
+-- Exemplo 2
+use uvv;
+go
+-- Criar a chave de criptografia do banco e associá-lp ao certificado
+
+create database encryption key with algorithm = AES_256 
+encryption by server certificate certificado_aula;
+go
+
+-- Depois, basta ativar a criptografia para o banco de dados
+alter database uvv
+set encryption on;
+go
