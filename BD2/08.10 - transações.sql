@@ -1,5 +1,5 @@
 -- Exemplo 1
-create proc procedimento6 (@valor decimal(10,3), @idbancoorigem int, @idbancodestino int) as 
+create proc procedimento7 (@valor decimal(10,3), @idbancoorigem int, @idbancodestino int) as 
 
 begin try
 begin tran
@@ -18,11 +18,8 @@ begin tran
 end try -- Finaliza o Catch
 	begin catch 
 	-- Executa se der qualquer tipo de erro no bloco try
-	select 'Ops, deu erro! O erro foi ' + ERROR_MESSAGE()
 	rollback transaction
+	-- Exibe a mensagem de erro
+	select 'Ops, deu erro! O erro foi ' + ERROR_MESSAGE()
 
 end catch
-
-exec procedimento6 @valor = 200, @idbancoorigem = 1, @idbancodestino = 2
-
-select * from banco 
