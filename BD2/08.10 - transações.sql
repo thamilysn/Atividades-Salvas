@@ -17,7 +17,7 @@ begin tran
 	-- Confirma a transação se tudo ocorrer sem erros
 end try -- Finaliza o Catch
 	begin catch 
-	-- Executa as 
+	-- Executa se der qualquer tipo de erro no bloco try
 	select 'Ops, deu erro! O erro foi ' + ERROR_MESSAGE()
 	rollback transaction
 
