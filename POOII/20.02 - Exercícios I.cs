@@ -47,7 +47,7 @@ namespace Exercicios
 
             if (total > 0)
             {
-                Console.WriteLine("\nPorcentagem por faixa etária:");
+                Console.WriteLine("\nA porcentagem seria de:");
 
                 Console.WriteLine($"Faixa A (1-15): {(faixaA * 100.0 / total):F2}%");
                 Console.WriteLine($"Faixa B (16-30): {(faixaB * 100.0 / total):F2}%");
@@ -57,7 +57,7 @@ namespace Exercicios
             }
             else
             {
-                Console.WriteLine("Nenhuma idade válida foi informada.");
+                Console.WriteLine("Idade não foi informada.");
             }
         }
     }
