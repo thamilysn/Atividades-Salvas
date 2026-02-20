@@ -51,7 +51,7 @@ namespace Exercicios
 
                 Console.WriteLine($"Faixa A (1-15): {(faixaA * 100.0 / total):F2}%");
                 Console.WriteLine($"Faixa B (16-30): {(faixaB * 100.0 / total):F2}%");
-                Console.WriteLine($"Faixa C (31-45): {(faixaC * 100.0 / totalPessoas):F2}%");
+                Console.WriteLine($"Faixa C (31-45): {(faixaC * 100.0 / total):F2}%");
                 Console.WriteLine($"Faixa D (46-60): {(faixaD * 100.0 / total):F2}%");
                 Console.WriteLine($"Faixa E (61+): {(faixaE * 100.0 / total):F2}%");
             }
