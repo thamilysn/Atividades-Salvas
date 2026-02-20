@@ -43,17 +43,17 @@ namespace Exercicios
                     faixaE++;
             }
 
-            int totalPessoas = idades.Count;
+            int total = idades.Count;
 
-            if (totalPessoas > 0)
+            if (total > 0)
             {
                 Console.WriteLine("\nPorcentagem por faixa etária:");
 
-                Console.WriteLine($"Faixa A (1-15): {(faixaA * 100.0 / totalPessoas):F2}%");
-                Console.WriteLine($"Faixa B (16-30): {(faixaB * 100.0 / totalPessoas):F2}%");
+                Console.WriteLine($"Faixa A (1-15): {(faixaA * 100.0 / total):F2}%");
+                Console.WriteLine($"Faixa B (16-30): {(faixaB * 100.0 / total):F2}%");
                 Console.WriteLine($"Faixa C (31-45): {(faixaC * 100.0 / totalPessoas):F2}%");
-                Console.WriteLine($"Faixa D (46-60): {(faixaD * 100.0 / totalPessoas):F2}%");
-                Console.WriteLine($"Faixa E (61+): {(faixaE * 100.0 / totalPessoas):F2}%");
+                Console.WriteLine($"Faixa D (46-60): {(faixaD * 100.0 / total):F2}%");
+                Console.WriteLine($"Faixa E (61+): {(faixaE * 100.0 / total):F2}%");
             }
             else
             {
@@ -63,4 +63,4 @@ namespace Exercicios
     }
 }
 
-//Exercício 2 - Verão Capixaba
+//Exercício 2.1 - Verão Capixaba
