@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="293" Width="422">
+
+    <Grid Margin="0,0,0,3">
+
+        <!-- Botão corrigido -->
+        <Button x:Name="btnConverter"
+                Content="Converter"
+                HorizontalAlignment="Left"
+                Margin="59,152,0,0"
+                VerticalAlignment="Top"
+                Click="btnConverter_Click"
+                Height="30"
+                Width="152"/>
+
+        <!-- TextBox para Celsius -->
+        <TextBox x:Name="txtCelsius"
+                 HorizontalAlignment="Left"
+                 Margin="59,0,0,0"
+                 TextWrapping="Wrap"
+                 Text="Insira o valor desejado"
+                 VerticalAlignment="Center"
+                 Width="152"
+                 TextChanged="TextBox_TextChanged"/>
+
+        <!-- Título -->
+        <TextBlock x:Name="titulo"
+                   HorizontalAlignment="Left"
+                   Margin="59,79,0,165"
+                   TextWrapping="Wrap"
+                   Text="Converta de graus Celsius para Fahrenheit"
+                   Height="30"
+                   Width="300"
+                   FontSize="15"/>
+
+        <!-- Resultado -->
+        <Label x:Name="lblResultado"
+               Content="Graus Fahrenheit"
+               HorizontalAlignment="Left"
+               Margin="230,155,0,0"
+               VerticalAlignment="Top"/>
+
+        <!-- Label Celsius -->
+        <Label x:Name="lblCelsius"
+               Content="Graus Celsius"
+               HorizontalAlignment="Left"
+               Margin="230,0,0,0"
+               VerticalAlignment="Center"/>
+
+    </Grid>
+</Window>
