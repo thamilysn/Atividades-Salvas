@@ -69,3 +69,64 @@ int main(){
 }
 
 //E se for uma busca binária? (pegar a tabela pela metade e analisar, se valor é menor: buscar no inicio, se maior é maior: buscar no final)
+#include <stdio.h>
+
+void imprimeBusca(int *x, int n){
+    printf("Valor: ");
+    for(int i = 0; i < n; i++){
+        printf("| %d ", x[i]);
+    }
+}
+
+int buscaLinearOrd(int *x, int n, int valor){
+    for(int i = 0; i < n; i++){
+        if(x[i] == valor){
+            return i;
+        }else{
+            if(valor < x[i]){
+                return -1;
+            }
+        }
+    }
+    return -1;
+}
+    int buscaBinaria(int *v, int n, int elem){
+        int inicio, meio, fim;
+        inicio = 0;
+        fim = n-1;
+        
+        while (inicio <= fim){
+            meio = (inicio+fim)/2;
+            
+            if(v[meio] == elem){
+                return meio;
+                
+            }else{
+                if(elem < v[meio]){
+                    fim = meio -1;
+                    
+                }else{
+                    inicio = meio+1;
+                }
+            }
+        }
+    return -1;
+    }
+    
+int main(){
+    int v[7] = {23, 4, 67, -8, 54, 90, 21};
+    int vo[7] = {-8, 4, 21, 23, 54, 67, 90};
+    int vb[10] = {-8, -5, 1, 4, 14, 21, 23, 54, 67, 90};
+    printf("Inicio.\n");
+    
+    imprimeBusca(v, 7);
+    
+    int b = -8;
+    int resultado = buscaLinearOrd(vo, 7, b);
+    
+    printf("Resultado: %d \n", resultado);
+    printf("\nBusca binaria: %d \n", buscaBinaria(vb, 10, 14));
+
+    return 0;
+    
+}
