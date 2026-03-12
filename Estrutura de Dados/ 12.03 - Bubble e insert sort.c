@@ -1,15 +1,14 @@
 //BubbleSort
 #include <stdio.h>
 
-int SelectionSort(int *v, int x){
-    int y;
-    
-    for(int i = 0; i < x; i++){
-        for(int j = 0; j < x; j++){
-            if(v[i] > v[j]){
-                y = v[i];
-                v[i] = v[j];
-                v[j] = y;
+void bubbleSort(int *v, int x){
+    int temp;
+    for(int i = 0; i < x - 1; i++){
+        for(int j = 0; j < x - i - 1; j++){
+            if(v[j] > v[j + 1]){
+                temp = v[j];
+                v[j] = v[j + 1];
+                v[j + 1] = temp;
             }
         }
     }
@@ -17,10 +16,13 @@ int SelectionSort(int *v, int x){
 
 int main()
 {
-    int v[7] = {7, 4, 5, 9, 8, 2, 1};
-    SelectionSort(v, 7);
-    for(int i = 0; i < 7; i++)
-    printf("Os valores são: %d \n", v[i]);
+    int v[7] = {1, 3, 5, 8, 9, 2, 6};
+
+    bubbleSort(v, 7);
+
+    for(int i = 0; i < 7; i++){
+        printf("%d|", v[i]);
+    }
 
     return 0;
 }
