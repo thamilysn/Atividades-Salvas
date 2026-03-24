@@ -22,54 +22,68 @@ int main() {
 
 //MergeSort
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-void mergeSort(int *V, int inicio, int fim){
-    int meio;
-    if(inicio < fim){
-        meio = floor((inicio+fim) / 2);
-        
-        mergeSort (V, inicio, meio);
-        mergeSort (V, meio + 1, fim);
-        mergeSort (V, inicio, meio, fim);
+void ImprimeVetor(int *v, int n){
+    printf("\nVetor: |");
+    for(int i=0; i < n; i++){
+        printf("%d |", v[i]);
     }
 }
 
-void merge(int *V, int inicio, int meio, int fim){
-    int i = inicio;
-    int j = meio + 1;
-    int k = 0;
-
-    int *aux = (int*) malloc((fim - inicio + 1) * sizeof(int));
-
-    while (i <= meio && j <= fim){
-        if (V[i] < V[j])
-            aux[k++] = V[i++];
-        else
-            aux[k++] = V[j++];
+void merge(int *v, int inicio, int meio, int fim){
+    int *temp, i, j, k, tamanho, p1, p2, fim1 = 0, fim2 = 0;
+    tamanho = fim - inicio + 1;
+    p1 = inicio;
+    p2 = meio + 1;
+    temp = (int*)malloc(tamanho * sizeof(int));
+    
+    if(temp!=NULL){
+        for(i = 0; i < tamanho; i++){
+            if(!fim1 && !fim2){ 
+                if(v[p1] < v[p2]){
+                    temp[i] = v[p1];
+                    p1++;
+                    if(p1 > meio) fim1 = 1;
+                    
+                }else{
+                    temp[i] = v[p2++];
+                }
+            
+            }else{
+                if(!fim1){
+                    temp[i] = v[p1++]; 
+                }
+                
+                else{temp[i] = v[p2++];}
+            }
+        }
+        for(j =0, k = inicio; j < tamanho; j++, k++){
+            v[k] = temp[j];
+        }
     }
+    free(temp);
+}
 
-    while (i <= meio){
-        aux[k++] = V[i++];
+void mergeSort(int *v, int inicio, int fim){
+    int meio;
+    
+    if(inicio < fim){
+        meio = floor((inicio + fim) / 2);
+        mergeSort(v, inicio, meio);
+        mergeSort(v, meio + 1, fim);
+        merge(v, inicio, meio, fim);
     }
-
-    while (j <= fim){
-        aux[k++] = V[j++];
-    }
-
-    for (i = inicio, k = 0; i <= fim; i++, k++){
-        V[i] = aux[k];
-    }
-
-    free(aux);
+    
 }
 
 int main()
 {
-    int V[10] = {12, 15, 43, 10, 28, 45, 19, 4, 16, 13};
-    mergeSort(V, 10);
-    for(int i = 0; i < 10; i++)
-    printf("%d|", V[i]);
-
+    int vet[10] = {6,75,1,14,24,18,3,7,50,10};
+    ImprimeVetor(vet, 10);
+    mergeSort(vet, 0, 9);
+    ImprimeVetor(vet, 10);
     return 0;
 }
 
