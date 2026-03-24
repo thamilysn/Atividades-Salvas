@@ -33,33 +33,31 @@ void ImprimeVetor(int *v, int n){
 }
 
 void merge(int *v, int inicio, int meio, int fim){
-    int *temp, i, j, k, tamanho, p1, p2, fim1 = 0, fim2 = 0;
+    int *temp, i, j, k, tamanho, p1, p2;
     tamanho = fim - inicio + 1;
     p1 = inicio;
     p2 = meio + 1;
     temp = (int*)malloc(tamanho * sizeof(int));
-    
-    if(temp!=NULL){
+
+    if(temp != NULL){
         for(i = 0; i < tamanho; i++){
-            if(!fim1 && !fim2){ 
-                if(v[p1] < v[p2]){
-                    temp[i] = v[p1];
-                    p1++;
-                    if(p1 > meio) fim1 = 1;
-                    
-                }else{
+            int fim1 = (p1 > meio);
+            int fim2 = (p2 > fim);
+
+            if(!fim1 && !fim2){
+                if(v[p1] <= v[p2]){
+                    temp[i] = v[p1++];
+                } else {
                     temp[i] = v[p2++];
                 }
-            
-            }else{
-                if(!fim1){
-                    temp[i] = v[p1++]; 
-                }
-                
-                else{temp[i] = v[p2++];}
+            } else if(!fim1){
+                temp[i] = v[p1++];
+            } else {
+                temp[i] = v[p2++];
             }
         }
-        for(j =0, k = inicio; j < tamanho; j++, k++){
+
+        for(j = 0, k = inicio; j < tamanho; j++, k++){
             v[k] = temp[j];
         }
     }
