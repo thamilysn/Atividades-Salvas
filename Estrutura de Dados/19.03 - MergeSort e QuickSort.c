@@ -86,3 +86,60 @@ int main()
 }
 
 //QuickSort
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void ImprimeVetor(int *v, int n){
+    printf("\nVetor: |");
+    for(int i = 0; i < n; i++){
+        printf("%d |", v[i]);
+    }
+}
+
+int particiona(int *v, int inicio, int fim){
+    int esq, dir, pivo, aux;
+    esq = inicio;
+    dir = fim;
+    pivo = v[inicio];
+
+    while(esq < dir){
+        while(esq <= fim && v[esq] <= pivo){
+            esq++;
+        }
+
+        while(dir >= 0 && v[dir] > pivo){
+            dir--;
+        }
+
+        if(esq < dir){
+            aux = v[esq];
+            v[esq] = v[dir];
+            v[dir] = aux;
+        }
+    }
+
+    aux = v[inicio];
+    v[inicio] = v[dir];
+    v[dir] = aux;
+
+    return dir;
+}
+
+void quickSort(int *v, int inicio, int fim){
+    int pivo;
+    if(fim > inicio){
+        pivo = particiona(v, inicio, fim);
+        quickSort(v, inicio, pivo - 1);
+        quickSort(v, pivo + 1, fim);
+    }
+}
+
+int main()
+{
+    int vet[10] = {6,75,1,14,24,18,3,7,50,10};
+    ImprimeVetor(vet, 10);
+    quickSort(vet, 0, 9);
+    ImprimeVetor(vet, 10);
+    return 0;
+}
