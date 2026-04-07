@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="4"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(110,100)" to="(110,420)"/>
+    <wire from="(150,100)" to="(150,420)"/>
+    <wire from="(80,280)" to="(270,280)"/>
+    <wire from="(80,360)" to="(270,360)"/>
+    <wire from="(80,200)" to="(270,200)"/>
+    <wire from="(80,120)" to="(270,120)"/>
+    <wire from="(80,320)" to="(270,320)"/>
+    <wire from="(80,300)" to="(270,300)"/>
+    <wire from="(80,240)" to="(270,240)"/>
+    <wire from="(80,260)" to="(270,260)"/>
+    <wire from="(80,220)" to="(270,220)"/>
+    <wire from="(80,160)" to="(270,160)"/>
+    <wire from="(80,180)" to="(270,180)"/>
+    <wire from="(80,140)" to="(270,140)"/>
+    <wire from="(80,400)" to="(270,400)"/>
+    <wire from="(80,380)" to="(270,380)"/>
+    <wire from="(80,340)" to="(270,340)"/>
+    <wire from="(60,140)" to="(60,160)"/>
+    <wire from="(60,180)" to="(60,200)"/>
+    <wire from="(60,100)" to="(60,120)"/>
+    <wire from="(60,160)" to="(60,180)"/>
+    <wire from="(60,120)" to="(60,140)"/>
+    <wire from="(80,120)" to="(80,140)"/>
+    <wire from="(60,380)" to="(60,400)"/>
+    <wire from="(60,360)" to="(60,380)"/>
+    <wire from="(80,100)" to="(80,120)"/>
+    <wire from="(60,400)" to="(60,420)"/>
+    <wire from="(80,160)" to="(80,180)"/>
+    <wire from="(80,140)" to="(80,160)"/>
+    <wire from="(80,180)" to="(80,200)"/>
+    <wire from="(80,200)" to="(80,220)"/>
+    <wire from="(60,300)" to="(60,320)"/>
+    <wire from="(60,280)" to="(60,300)"/>
+    <wire from="(60,320)" to="(60,340)"/>
+    <wire from="(60,340)" to="(60,360)"/>
+    <wire from="(60,220)" to="(60,240)"/>
+    <wire from="(60,200)" to="(60,220)"/>
+    <wire from="(60,240)" to="(60,260)"/>
+    <wire from="(60,260)" to="(60,280)"/>
+    <wire from="(80,240)" to="(80,260)"/>
+    <wire from="(80,260)" to="(80,280)"/>
+    <wire from="(80,220)" to="(80,240)"/>
+    <wire from="(80,280)" to="(80,300)"/>
+    <wire from="(80,320)" to="(80,340)"/>
+    <wire from="(80,300)" to="(80,320)"/>
+    <wire from="(80,340)" to="(80,360)"/>
+    <wire from="(80,400)" to="(80,420)"/>
+    <wire from="(80,380)" to="(80,400)"/>
+    <wire from="(80,360)" to="(80,380)"/>
+    <wire from="(110,100)" to="(150,100)"/>
+    <wire from="(110,420)" to="(150,420)"/>
+    <wire from="(270,70)" to="(270,100)"/>
+    <wire from="(80,100)" to="(110,100)"/>
+    <wire from="(80,420)" to="(110,420)"/>
+    <wire from="(60,70)" to="(270,70)"/>
+    <wire from="(150,100)" to="(270,100)"/>
+    <wire from="(150,420)" to="(270,420)"/>
+    <wire from="(270,240)" to="(270,260)"/>
+    <wire from="(270,400)" to="(270,420)"/>
+    <wire from="(270,380)" to="(270,400)"/>
+    <wire from="(270,160)" to="(270,180)"/>
+    <wire from="(270,320)" to="(270,340)"/>
+    <wire from="(270,280)" to="(270,300)"/>
+    <wire from="(270,300)" to="(270,320)"/>
+    <wire from="(270,200)" to="(270,220)"/>
+    <wire from="(270,220)" to="(270,240)"/>
+    <wire from="(270,180)" to="(270,200)"/>
+    <wire from="(270,360)" to="(270,380)"/>
+    <wire from="(270,340)" to="(270,360)"/>
+    <wire from="(270,120)" to="(270,140)"/>
+    <wire from="(270,140)" to="(270,160)"/>
+    <wire from="(270,100)" to="(270,120)"/>
+    <wire from="(270,260)" to="(270,280)"/>
+    <wire from="(60,70)" to="(60,100)"/>
+    <wire from="(60,140)" to="(80,140)"/>
+    <wire from="(60,100)" to="(80,100)"/>
+    <wire from="(60,160)" to="(80,160)"/>
+    <wire from="(60,120)" to="(80,120)"/>
+    <wire from="(60,300)" to="(80,300)"/>
+    <wire from="(60,380)" to="(80,380)"/>
+    <wire from="(60,220)" to="(80,220)"/>
+    <wire from="(60,180)" to="(80,180)"/>
+    <wire from="(60,200)" to="(80,200)"/>
+    <wire from="(60,420)" to="(80,420)"/>
+    <wire from="(60,260)" to="(80,260)"/>
+    <wire from="(60,280)" to="(80,280)"/>
+    <wire from="(60,340)" to="(80,340)"/>
+    <wire from="(60,360)" to="(80,360)"/>
+    <wire from="(60,320)" to="(80,320)"/>
+    <wire from="(60,400)" to="(80,400)"/>
+    <wire from="(60,240)" to="(80,240)"/>
+    <comp lib="6" loc="(69,354)" name="Text">
+      <a name="text" val="C"/>
+    </comp>
+    <comp lib="6" loc="(69,215)" name="Text">
+      <a name="text" val="5"/>
+    </comp>
+    <comp lib="6" loc="(92,354)" name="Text">
+      <a name="text" val="JPZ"/>
+    </comp>
+    <comp lib="6" loc="(69,415)" name="Text">
+      <a name="text" val="F"/>
+    </comp>
+    <comp lib="6" loc="(70,235)" name="Text">
+      <a name="text" val="6"/>
+    </comp>
+    <comp lib="6" loc="(198,316)" name="Text">
+      <a name="text" val="AC &lt;= AC &lt;&lt; Q"/>
+    </comp>
+    <comp lib="6" loc="(144,214)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(69,174)" name="Text">
+      <a name="text" val="3"/>
+    </comp>
+    <comp lib="6" loc="(208,256)" name="Text">
+      <a name="text" val="AC &lt;= AC OR M(X)"/>
+    </comp>
+    <comp lib="6" loc="(70,315)" name="Text">
+      <a name="text" val="A"/>
+    </comp>
+    <comp lib="6" loc="(128,135)" name="Text">
+      <a name="text" val="000"/>
+    </comp>
+    <comp lib="6" loc="(95,136)" name="Text">
+      <a name="text" val="MOV"/>
+    </comp>
+    <comp lib="6" loc="(144,273)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(92,253)" name="Text">
+      <a name="text" val="OR"/>
+    </comp>
+    <comp lib="6" loc="(145,114)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(198,175)" name="Text">
+      <a name="text" val="AC &lt;= AC+M(X)"/>
+    </comp>
+    <comp lib="0" loc="(150,420)" name="Ground"/>
+    <comp lib="6" loc="(128,235)" name="Text">
+      <a name="text" val="011"/>
+    </comp>
+    <comp lib="6" loc="(176,116)" name="Text">
+      <a name="text" val="AC &lt;= X"/>
+    </comp>
+    <comp lib="6" loc="(128,194)" name="Text">
+      <a name="text" val="010"/>
+    </comp>
+    <comp lib="6" loc="(188,195)" name="Text">
+      <a name="text" val="AC &lt;= AC-X"/>
+    </comp>
+    <comp lib="6" loc="(93,374)" name="Text">
+      <a name="text" val="JPO"/>
+    </comp>
+    <comp lib="6" loc="(126,374)" name="Text">
+      <a name="text" val="110"/>
+    </comp>
+    <comp lib="6" loc="(158,90)" name="Text">
+      <a name="text" val="Instruction Set"/>
+      <a name="font" val="Tahoma bold 14"/>
+    </comp>
+    <comp lib="6" loc="(127,314)" name="Text">
+      <a name="text" val="101"/>
+    </comp>
+    <comp lib="6" loc="(127,254)" name="Text">
+      <a name="text" val="011"/>
+    </comp>
+    <comp lib="6" loc="(178,393)" name="Text">
+      <a name="text" val="PC &lt;= X"/>
+    </comp>
+    <comp lib="6" loc="(145,154)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(146,354)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(95,175)" name="Text">
+      <a name="text" val="ADD"/>
+    </comp>
+    <comp lib="6" loc="(94,294)" name="Text">
+      <a name="text" val="NOT"/>
+    </comp>
+    <comp lib="6" loc="(70,395)" name="Text">
+      <a name="text" val="E"/>
+    </comp>
+    <comp lib="6" loc="(192,274)" name="Text">
+      <a name="text" val="AC &lt;= NOT X"/>
+    </comp>
+    <comp lib="6" loc="(70,334)" name="Text">
+      <a name="text" val="B"/>
+    </comp>
+    <comp lib="6" loc="(126,415)" name="Text">
+      <a name="text" val="111"/>
+    </comp>
+    <comp lib="6" loc="(125,293)" name="Text">
+      <a name="text" val="100"/>
+    </comp>
+    <comp lib="6" loc="(92,235)" name="Text">
+      <a name="text" val="OR"/>
+    </comp>
+    <comp lib="6" loc="(144,252)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(94,334)" name="Text">
+      <a name="text" val="SHF"/>
+    </comp>
+    <comp lib="6" loc="(94,315)" name="Text">
+      <a name="text" val="SHF"/>
+    </comp>
+    <comp lib="6" loc="(205,295)" name="Text">
+      <a name="text" val="AC &lt;= NOT M( X)"/>
+    </comp>
+    <comp lib="6" loc="(211,356)" name="Text">
+      <a name="text" val="PC &lt;= X SE FLAG Z"/>
+    </comp>
+    <comp lib="6" loc="(200,235)" name="Text">
+      <a name="text" val="AC &lt;= AC OR X"/>
+    </comp>
+    <comp lib="6" loc="(189,414)" name="Text">
+      <a name="text" val="M(X) &lt;= AC "/>
+    </comp>
+    <comp lib="6" loc="(145,394)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(127,394)" name="Text">
+      <a name="text" val="111"/>
+    </comp>
+    <comp lib="6" loc="(127,334)" name="Text">
+      <a name="text" val="101"/>
+    </comp>
+    <comp lib="6" loc="(190,155)" name="Text">
+      <a name="text" val="AC &lt;= AC+X"/>
+    </comp>
+    <comp lib="6" loc="(70,375)" name="Text">
+      <a name="text" val="D"/>
+    </comp>
+    <comp lib="6" loc="(128,155)" name="Text">
+      <a name="text" val="001"/>
+    </comp>
+    <comp lib="6" loc="(128,115)" name="Text">
+      <a name="text" val="000"/>
+    </comp>
+    <comp lib="6" loc="(144,414)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(145,173)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(95,215)" name="Text">
+      <a name="text" val="SUB"/>
+    </comp>
+    <comp lib="6" loc="(199,336)" name="Text">
+      <a name="text" val="AC &lt;= AC &gt;&gt; Q"/>
+    </comp>
+    <comp lib="6" loc="(91,394)" name="Text">
+      <a name="text" val="GO"/>
+    </comp>
+    <comp lib="6" loc="(70,295)" name="Text">
+      <a name="text" val="9"/>
+    </comp>
+    <comp lib="6" loc="(187,135)" name="Text">
+      <a name="text" val="AC &lt;= M(X)"/>
+    </comp>
+    <comp lib="6" loc="(70,155)" name="Text">
+      <a name="text" val="2"/>
+    </comp>
+    <comp lib="6" loc="(145,314)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(144,294)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(127,354)" name="Text">
+      <a name="text" val="110"/>
+    </comp>
+    <comp lib="6" loc="(144,234)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(70,115)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(145,194)" name="Text">
+      <a name="text" val="0"/>
+    </comp>
+    <comp lib="6" loc="(94,155)" name="Text">
+      <a name="text" val="ADD"/>
+    </comp>
+    <comp lib="6" loc="(69,274)" name="Text">
+      <a name="text" val="8"/>
+    </comp>
+    <comp lib="6" loc="(128,174)" name="Text">
+      <a name="text" val="001"/>
+    </comp>
+    <comp lib="6" loc="(145,333)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(96,115)" name="Text">
+      <a name="text" val="MOV"/>
+    </comp>
+    <comp lib="6" loc="(95,413)" name="Text">
+      <a name="text" val="STR"/>
+    </comp>
+    <comp lib="6" loc="(69,253)" name="Text">
+      <a name="text" val="7"/>
+    </comp>
+    <comp lib="6" loc="(212,374)" name="Text">
+      <a name="text" val="PC &lt;= X SE FLAG O"/>
+    </comp>
+    <comp lib="6" loc="(198,215)" name="Text">
+      <a name="text" val="AC &lt;= AC-M(X)"/>
+    </comp>
+    <comp lib="6" loc="(70,135)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(125,274)" name="Text">
+      <a name="text" val="100"/>
+    </comp>
+    <comp lib="6" loc="(145,134)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(94,194)" name="Text">
+      <a name="text" val="SUB"/>
+    </comp>
+    <comp lib="6" loc="(94,274)" name="Text">
+      <a name="text" val="NOT"/>
+    </comp>
+    <comp lib="6" loc="(145,374)" name="Text">
+      <a name="text" val="1"/>
+    </comp>
+    <comp lib="6" loc="(69,195)" name="Text">
+      <a name="text" val="4"/>
+    </comp>
+    <comp lib="6" loc="(128,214)" name="Text">
+      <a name="text" val="010"/>
+    </comp>
+  </circuit>
+</project>
