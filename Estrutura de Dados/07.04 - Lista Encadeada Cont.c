@@ -76,3 +76,4 @@ int main()
     imprimir_lista(lst);
     return 0;
 }
+//função pra inserir no inicio 
