@@ -167,9 +167,7 @@ void imprimir_lista(Lista* lista){
         }
     }
 }
-
-//exemplo com while
-int busca_while(Lista *lista, int x){
+int busca_while(Lista *lista, int x){ //exemplo com while
     if(lista == NULL) { return 0; }
     if(*lista == NULL) { return 0; }
     
@@ -185,8 +183,7 @@ int busca_while(Lista *lista, int x){
     return 0; //se não, retorna 0
 }
 
-//exemplo com for
-int busca_for(Lista* lista, int x){
+int busca_for(Lista* lista, int x){ //exemplo com for
     if(lista == NULL) { return 0; }
     cel *aux;
 
