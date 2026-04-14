@@ -346,3 +346,4 @@ int main()
 }
 
 //Função de remover itens da lista
+//Função de limpar toda a lista
