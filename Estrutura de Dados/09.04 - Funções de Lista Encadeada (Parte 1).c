@@ -344,6 +344,3 @@ int main()
     
     return 0;
 }
-
-//Função de remover itens da lista
-//Função de limpar toda a lista
