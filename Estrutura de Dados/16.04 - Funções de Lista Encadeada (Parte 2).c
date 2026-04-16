@@ -2,6 +2,9 @@
 #include<stdlib.h>
 
 //codigo pra liberar lista de tras pra frente
+#include <stdio.h>
+#include<stdlib.h>
+
 typedef struct cel{
   int conteudo;
   struct cel *seg;
@@ -10,18 +13,15 @@ typedef struct cel{
 typedef struct cel* Lista;
 
 void imprime_lista(Lista* lista){
-  printf("\nx");
   if(lista==NULL){
-    printf("\n1");
     return;
   }
   cel* aux = *lista;
-  printf("\n2");
   while(aux!=NULL){
-    printf("\t%i",aux->conteudo);
+    printf("%d -> ", aux->conteudo);
     aux=aux->seg;
   }
-  printf("\n");
+  printf("NULL\n");
 }
 
 Lista* cria_lista(){
@@ -63,6 +63,7 @@ int insere_lista_inicio(Lista* lista, int x) {
   return 1;
 
 }
+
 int busca(Lista *lista, int valor){
   cel *p;
   for(p=*lista;p!=NULL;p=p->seg){
@@ -71,6 +72,42 @@ int busca(Lista *lista, int valor){
     }
   }
   return 0;
+}
+
+void libera_lista(Lista *lista){
+    if(lista != NULL){
+        cel *aux;
+        while(*lista != NULL){
+            aux = *lista;
+            *lista = (*lista) -> seg;
+            free(aux);
+        }
+        free(lista);
+    }
+}
+
+int remove_lista(Lista *lista, int x){
+    if(lista == NULL) {return 0;}
+    if(*lista == NULL) {return 0;}
+
+    cel *aux = *lista;
+    cel *ant = NULL;
+
+    while(aux != NULL && aux->conteudo != x){
+        ant = aux;
+        aux = aux->seg;
+    }
+
+    if(aux == NULL) {return 0;}
+
+    if(aux == *lista){
+        *lista = aux->seg;
+    } else {
+        ant->seg = aux->seg;
+    }
+
+    free(aux);
+    return 1;
 }
 
 int main(void) {
@@ -83,10 +120,11 @@ int main(void) {
   insere_lista_fim(lst, 5);
   imprime_lista(lst);
 
-  //remove_lista(lst,4);
+  remove_lista(lst,4);
   imprime_lista(lst);
   printf("\nA busca retornou %d\n",busca(lst,7));
-  //libera_lista(lst);
+  
+  libera_lista(lst);
   imprime_lista(lst);
 
   return 0;
