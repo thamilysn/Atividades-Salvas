@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include<stdlib.h>
-
 //codigo pra liberar lista de tras pra frente
 #include <stdio.h>
 #include<stdlib.h>
