@@ -1,9 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct cel{
+struct elemento{
     int conteudo;
-    struct cel *seg;
-}cel;
+    struct elemento *prox;
+};
 
-typedef struct cel* Lista;
+typedef struct elemento Elem;
+
+typedef struct elemento* Pilha;
+
+struct fila{
+    struct elemento *inicio;
+    struct elemento *fim;
+    int qnt
+}
+
+typedef struct fila Fila;
