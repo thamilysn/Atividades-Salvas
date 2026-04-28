@@ -7,11 +7,3 @@ typedef struct cel{
 }cel;
 
 typedef struct cel* Lista;
-
-Lista* cria_lista(){
-    Lista *li = (Lista*) malloc (sizeof(Lista));
-    if(li != NULL){
-        *li = NULL;
-    }
-    return li;
-}
