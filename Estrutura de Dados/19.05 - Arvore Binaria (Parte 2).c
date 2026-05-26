@@ -6,6 +6,7 @@ Welcome to GDB Online.
   Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
+//https://portaldoprofessor.fct.unesp.br/projetos/cadilag/apps/structs/arv_avl.php - pra fazer árvore avl
 #include <stdio.h>
 
 struct NO{
