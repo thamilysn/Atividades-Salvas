@@ -23,7 +23,7 @@ CQD: (n+4) f= f(n+3) + f(n+2)
 1) Mult 0 n =0
 2) Mult m 0=0
 3) Mult 1 n=n
-4) Mult m n=n+mult(n-1, n)+
+4) Mult m n = n + mult(n-1, n)
 	
 M(a,b) = a + M(a, b−1), b > 1
 
