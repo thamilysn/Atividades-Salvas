@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,7 +14,7 @@ struct Aluno {
     float nota;
 };
 
-#define TAM 50
+#define TAM 5
 
 int main() {
     FILE *pont;
@@ -34,7 +42,7 @@ int main() {
 
     fclose(pont);
 
-    printf("\nDigite o numero do aluno (1 a 50): ");
+    printf("\nDigite o numero do aluno (1 a 5): ");
     scanf("%d", &numero);
 
     if (numero < 1 || numero > TAM) {
