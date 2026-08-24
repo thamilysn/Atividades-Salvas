@@ -21,12 +21,12 @@ void criarArquivo()
     FILE *arquivoBinario = fopen("alunos.dat", "wb");
 
     if (arquivoTexto == NULL) {
-        printf("Erro ao abrir alunos.txt!\n");
+        printf("erro ao abrir alunos.txt\n");
         return;
     }
 
     if (arquivoBinario == NULL) {
-        printf("Erro ao criar alunos.dat!\n");
+        printf("erro ao criar alunos.dat!\n");
         fclose(arquivoTexto);
         return;
     }
@@ -54,8 +54,8 @@ void criarArquivo()
     fclose(arquivoTexto);
     fclose(arquivoBinario);
 
-    printf("\nArquivo criado com sucesso!\n");
-    printf("Quantidade de registros gravados: %d\n", quantidade);
+    printf("\narquivo criado.\n");
+    printf("quantidade de registros gravados: %d\n", quantidade);
 }
 
 
@@ -66,7 +66,7 @@ void buscarMatricula()
     FILE *arquivo = fopen("alunos.dat", "rb");
 
     if (arquivo == NULL) {
-        printf("Erro ao abrir alunos.dat!\n");
+        printf("erro ao abrir alunos.dat.\n");
         return;
     }
 
@@ -74,7 +74,7 @@ void buscarMatricula()
     int encontrados = 0;
     aluno a;
 
-    printf("\nDigite a matricula que deseja encontrar: ");
+    printf("\ndigite a matricula que deseja encontrar: ");
     scanf("%d", &matricula);
 
     while (fread(&a, sizeof(aluno), 1, arquivo) == 1) {
@@ -83,13 +83,13 @@ void buscarMatricula()
 
         if (a.matricula == matricula) {
 
-            printf("\nAluno encontrado!\n");
+            printf("\naluno encontrado\n");
             printf("ID: %d\n", a.id);
             printf("Matricula: %d\n", a.matricula);
             printf("Nome: %s\n", a.nome);
             printf("Media: %.2f\n", a.media);
 
-            printf("Quantidade de registros lidos: %d\n",
+            printf("quantidade de registros lidos: %d\n",
                    encontrados);
 
             fclose(arquivo);
@@ -97,8 +97,8 @@ void buscarMatricula()
         }
     }
 
-    printf("\nAluno nao encontrado!\n");
-    printf("Quantidade de registros lidos: %d\n",
+    printf("\naluno nao encontrado.\n");
+    printf("quantidade de registros lidos: %d\n",
            encontrados);
 
     fclose(arquivo);
@@ -111,18 +111,18 @@ void buscarRRN()
     FILE *arquivo = fopen("alunos.dat", "rb");
 
     if (arquivo == NULL) {
-        printf("Erro ao abrir alunos.dat!\n");
+        printf("erro ao abrir alunos.dat.\n");
         return;
     }
 
     int rrn;
     aluno a;
 
-    printf("\nDigite o RRN (0 a 99): ");
+    printf("\ndigite o RRN (de 0 a 99): ");
     scanf("%d", &rrn);
 
     if (rrn < 0 || rrn >= NUM_ALUNOS) {
-        printf("RRN invalido!\n");
+        printf("RRN invalido.\n");
         fclose(arquivo);
         return;
     }
@@ -135,14 +135,14 @@ void buscarRRN()
 
     if (fread(&a, sizeof(aluno), 1, arquivo) == 1) {
 
-        printf("\nAluno encontrado!\n");
+        printf("\naluno encontrado\n");
         printf("ID: %d\n", a.id);
         printf("Matricula: %d\n", a.matricula);
         printf("Nome: %s\n", a.nome);
         printf("Media: %.2f\n", a.media);
 
     } else {
-        printf("\nErro ao ler o registro!\n");
+        printf("\nerro ao ler o registro.\n");
     }
 
     fclose(arquivo);
@@ -156,7 +156,7 @@ void alterarMedia()
     FILE *arquivo = fopen("alunos.dat", "r+b");
 
     if (arquivo == NULL) {
-        printf("Erro ao abrir alunos.dat!\n");
+        printf("erro ao abrir alunos.dat.\n");
         return;
     }
 
@@ -164,11 +164,11 @@ void alterarMedia()
     float novaMedia;
     aluno a;
 
-    printf("\nDigite o RRN (0 a 99): ");
+    printf("\ndigite o RRN (de 0 a 99): ");
     scanf("%d", &rrn);
 
     if (rrn < 0 || rrn >= NUM_ALUNOS) {
-        printf("RRN invalido!\n");
+        printf("RRN invalido.\n");
         fclose(arquivo);
         return;
     }
@@ -179,18 +179,18 @@ void alterarMedia()
     fseek(arquivo, posicao, SEEK_SET);
     
     if (fread(&a, sizeof(aluno), 1, arquivo) != 1) {
-        printf("Erro ao ler o registro!\n");
+        printf("erro ao ler o registro.\n");
         fclose(arquivo);
         return;
     }
 
-    printf("\nAluno selecionado:\n");
+    printf("\naluno selecionado:\n");
     printf("ID: %d\n", a.id);
     printf("Matricula: %d\n", a.matricula);
     printf("Nome: %s\n", a.nome);
     printf("Media atual: %.2f\n", a.media);
 
-    printf("\nDigite a nova media: ");
+    printf("\ndigite a nova media: ");
     scanf("%f", &novaMedia);
 
     a.media = novaMedia;
@@ -199,7 +199,7 @@ void alterarMedia()
 
     fwrite(&a, sizeof(aluno), 1, arquivo);
 
-    printf("\nMedia alterada com sucesso!\n");
+    printf("\nmedia alterada com sucesso.\n");
 
     fclose(arquivo);
 }
@@ -210,7 +210,7 @@ int main()
 
     do {
 
-        printf("        SISTEMA DE ALUNOS\n");
+        printf("SISTEMA DE ALUNOS\n");
         printf("1 - Criar arquivo binario\n");
         printf("2 - Buscar por matricula\n");
         printf("3 - Buscar por RRN\n");
@@ -239,11 +239,11 @@ int main()
                 break;
 
             case 0:
-                printf("\nPrograma encerrado!\n");
+                printf("\nencerrando programa...\n");
                 break;
 
             default:
-                printf("\nOpcao invalida!\n");
+                printf("\nopcao invalida.\n");
         }
 
     } while (opcao != 0);
